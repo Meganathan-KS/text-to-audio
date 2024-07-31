@@ -1,0 +1,17 @@
+from gtts import gTTS
+import playsound
+
+def text_to_speech(text, lang='en', slow=False):
+    # Create gTTS object
+    tts = gTTS(text=text, lang=lang, slow=slow)
+    
+    # Save the audio file
+    audio_file = "speech.mp3"
+    tts.save(audio_file)
+    
+    # Play the audio file
+    playsound.playsound(audio_file)
+
+if __name__ == "__main__":
+    text = "Hello, how are you today?"
+    text_to_speech(text)
